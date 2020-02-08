@@ -1,0 +1,102 @@
+\documentclass[12pt,a4paper]{extreport}
+\usepackage[l2tabu,orthodox]{nag}
+
+% Пожалуйста, не меняйте указанные ниже установки полей в документе
+\usepackage[left=10mm,right=50mm, top=15mm,bottom=15mm,bindingoffset=0cm]{geometry}
+
+\usepackage{indentfirst}
+
+\usepackage{ccaption}
+\captiondelim{. }
+
+\usepackage{amssymb,amsmath,amsthm}
+
+\usepackage{fontspec}
+
+\setmainfont[Ligatures=TeX]{STIX}
+\newfontfamily{\cyrillicfont}[Ligatures=TeX]{STIX}
+\setmonofont{Fira Mono}
+\newfontfamily{\cyrillicfonttt}{Fira Mono}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0,0,.75}
+\definecolor{darkred}{rgb}{.7,0,0}
+\definecolor{darkgreen}{rgb}{0,.7,0}
+
+\usepackage[normalem]{ulem}
+\usepackage[textwidth=4cm,textsize=tiny]{todonotes}
+\newcommand{\fix}[2]{{\textcolor{red}{\uwave{#1}}\todo[fancyline]{#2}}}
+\newcommand{\hl}[1]{{\textcolor{red}{#1}}}
+\newcommand{\cmd}[1]{{\ttfamily{\textbackslash #1}}}
+
+\newcommand{\vrb}[1]{\PVerb{#1}}
+\newcommand{\vrbb}[1]{\texttt{\textbackslash}\PVerb{#1}}
+\newcommand{\rules}{{\href{https://goo.gl/FhyJJm}{Правила}}}
+
+
+\usepackage[
+    draft = false,
+    unicode = true,
+    colorlinks = true,
+    allcolors = blue,
+    hyperfootnotes = true
+]{hyperref}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}
+\newtheorem{lemma}{Лемма}
+\newtheorem{proposition}{Утверждение}
+\newtheorem{corollary}{Следствие}
+\theoremstyle{definition}
+\newtheorem{definition}{Определение}
+\newtheorem{notation}{Обозначение}
+\newtheorem{example}{Пример}
+    
+\newenvironment{task}[1]
+    {\par\noindent\textbf{\href{https://progensys.dainiak.com/problem-#1}{Задача #1}. }}
+    {\smallskip}
+\newenvironment{solution}
+    {\par\noindent\textbf{Решение. }}
+    {\bigskip}
+    
+
+
+\title{Решения задач по курсу «Дискретные структуры»}
+\author{Виктория Рудых}
+
+\begin{document}
+\maketitle
+
+% Таким образом нужно добавлять решения задач:
+% Каждое решение — в отдельном файле с названием “solution-N.tex”, где N — номер задачи, включающий буквенное обозначение пункта задачи, если таковое имеется.
+% Все картинки следует помещать в папку img/
+% Все незаконченные тексты решений можно помещать в папку drafts
+% В корневой папке должен быть только файл _main.tex и файлы вида solution-N.tex
+
+%\input{solution-16.tex}
+\input{solution-5.tex}
+\input{solution-37.tex}
+\input{solution-290.tex}
+\input{solution-11.tex}
+\input{solution-276.tex}
+\input{solution-362.tex}
+\input{solution-66.tex}
+\input{solution-91.tex}
+\input{solution-294.tex}
+\input{solution-320.tex}
+\input{solution-142.tex}
+\input{solution-159.tex}
+\input{solution-348.tex}
+
+\end{document}
