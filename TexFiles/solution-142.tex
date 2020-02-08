@@ -1,0 +1,13 @@
+\begin{task}{142}
+	Найдите асимптотику величины $\binom{3n+\log_2n}{2n}$ при $n \rightarrow +\infty$. Под нахождением асимптотики понимается нахождение такой формулы, между которой и оцениваемой величиной можно было бы поставить знак ∼. Формула внутри себя не должна содержать никаких значков $O$‑символики. Также не допускается наличие в формуле неопределённостей вида $\dfrac{0}{0}, 1^{\infty}$ и пр.
+\end{task}
+
+\begin{solution} 
+    Воспользуемся формулой Стирлинга
+    $ n! = \sqrt{2\pi n} \left( n\dfrac{n}{e}\right)$ и $ \log_2n = o(n)$ для получения асимптотики:
+    \[
+        \begin{split}
+            \binom{3n+\log_2n}{2n} &=\dfrac{(3n+\log_2n)!} {(2n)! \cdot (n+\log_2n)!} \sim \dfrac{\sqrt{2\pi (3n+\log_2n)} \left( \dfrac{3n+\log_2n}{e}\right)^{3n+\log_2n}}{\sqrt{2\pi \cdot 2n} \left( \dfrac{2n}{e}\right)^{2n} \cdot \sqrt{2\pi (n+\log_2n)} \left( \dfrac{n+\log_2n}{e}\right)^{n+\log_2n}} = \\ &= \dfrac{\sqrt{3n+\log_2n} \cdot  (3n+\log_2n)^{3n+\log_2n}}{\sqrt{4\pi n} \cdot (2n)^{2n} \cdot \sqrt{n+\log_2n} \cdot (n+\log_2n)^{n+\log_2n}} = \\ &= \dfrac{\sqrt{3n} \cdot \left(1+\dfrac{\log_2n}{3n}\right)^{3n+\log_2n} \cdot (3n)^{3n+\log_2n}}{\sqrt{4\pi n} \cdot (2n)^{2n} \cdot \sqrt{n} \cdot \left(1+\dfrac{\log_2n}{n}\right)^{n+\log_2n} \cdot n^{n+\log_2n}} = \\ &= \sqrt{\dfrac{3}{4\pi n}} \cdot \dfrac{\exp{\left(\ln \left(1+\dfrac{\log_2n}{3n}\right)\cdot (3n+\log_2n)\right)} \cdot 3^{3n+\log_2n}}{ \exp{\left(\ln{\left(1+\dfrac{\log_2n}{n}\right)}\cdot (n+\log_2n)\right)} \cdot 2^{2n}} \sim \\ &\sim  \sqrt{\dfrac{3}{4\pi n}} \cdot \dfrac{\exp{\left( \left(\dfrac{\log_2n}{3n} - \dfrac{1}{2} \cdot \left(\dfrac{\log_2n}{3n}\right)^2 + o\left(\dfrac{\ln n}{n}\right)\right) \cdot (3n+\log_2n)\right)} \cdot 3^{3n+\log_2n}}{ \exp{\left( \left(\dfrac{\log_2n}{n} - \dfrac{1}{2} \cdot \left(\dfrac{\log_2n}{n}\right)^2 + o\left(\dfrac{\ln n}{n}\right)\right) \cdot (n+\log_2n)\right)} \cdot 2^{2n}} \sim \\ &\sim \sqrt{\dfrac{3}{4\pi n}} \cdot \dfrac{\exp{\left(\log_2n + \dfrac{1}{2} \cdot \dfrac{(\log_2n)^2}{3n}\right)} \cdot 3^{3n+\log_2n}}{ \exp{\left(\log_2n + \dfrac{1}{2} \cdot \dfrac{(\log_2n)^2}{n}\right)} \cdot 2^{2n}} \sim \\ &\sim \sqrt{\dfrac{3}{4\pi}} \cdot \dfrac{3^{3n+\log_2n}}{\sqrt{n} \cdot 2^{2n}} 
+        \end{split}
+    \]
+\end{solution}
