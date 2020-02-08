@@ -1,0 +1,23 @@
+\begin{task}{5}
+	Планарен ли следующий граф? Если да, то нарисуйте его без самопересечений, если нет, то обоснуйте непланарность, найдя в нём подграф, гомеоморфный K3,3, и сославшись на теорему Куратовского.  \\
+	\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{img/66-1.png}
+    \end{figure}
+\end{task}
+
+\begin{solution}
+	Уберем часть ребер из графа.
+		\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{img/66-2.png}
+    \end{figure}
+    
+    Исключим белые вершины, заменим просто ребрами, и получим граф $K_{3,3}$.
+    	\begin{figure}[h]
+        \centering
+        \includegraphics[width=0.5\linewidth]{img/66-3.png}
+    \end{figure}
+    
+    В исходном графе есть граф, гомеоморфный $K_{3,3}$. Значит, по теореме Куратовского граф не планарен.
+\end{solution}
