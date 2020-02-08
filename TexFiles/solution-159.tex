@@ -1,0 +1,14 @@
+\begin{task}{159}
+    Функция $n(s)$ задана в виде $n(s) := \max(n_0 | (n_0!)^{\ln n_0} \leq s)$. Найдите асимптотику этой функции при $s \rightarrow \infty$. 
+\end{task}
+
+\begin{solution} 
+	Заметим, что $(n!)^{\ln(n+1)}.$ Возьмём логарифм от обеих частей:
+	\[ \ln n \cdot \ln n! \leq \ln s \leq \ln (n+1) \cdot \ln (n+1)!.\]
+	Воспользуясь формулой Стирлинга $\ln n! \sim n \cdot \ln n$ получим:
+	\[ n \cdot \ln^2n \lesssim \ln s \lesssim (n+1) \cdot \ln^2(n+1).\]
+	Учитывая, что $ (n+1) \cdot \ln^2(n+1) \sim n \cdot \ln^2n$, приходим к следующему выражению:
+	\[ \ln s \sim n \cdot \ln^2 n.\]
+	Возьмем от него еще раз логарифм $ \ln \ln s \sim \ln n$. Подставим это в предыдущее выражение: 
+	\[n \sim \dfrac{\ln s}{(\ln \ln s)^2}\]
+\end{solution}
